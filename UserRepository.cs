@@ -1,16 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
 
-public class UserRepository(LottoOptions options) : IDisposable
+public class UserRepository(LottoDbContext db)
 {
-    private readonly LottoDbContext db = new(options.dbOptions);
-
-    public void Dispose()
-    {
-        db.Dispose();
-        GC.SuppressFinalize(this);
-    }
-
     public void SaveChanges() => db.SaveChanges();
 
     public void AddUser(User user)

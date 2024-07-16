@@ -1,4 +1,4 @@
-internal class LottoTester(LottoOptions options)
+internal class LottoTester(UserRepository userRepo, LottoOptions options)
 {
     public void AddUsers()
     {
